@@ -1,0 +1,45 @@
+import os
+from docx import Document
+
+# === 設定資料夾路徑 ===
+folder_path = r"C:\Users\USER\Desktop\word_files"  # ← 改成你放 Word 的資料夾路徑
+
+def get_title_from_docx(filepath):
+    """從 docx 取得第一個標題（若沒有，取第一段文字）"""
+    try:
+        doc = Document(filepath)
+        for para in doc.paragraphs:
+            if para.style.name.startswith('Heading'):
+                return para.text.strip()
+        # 如果沒有任何標題，就取第一個非空段落
+        for para in doc.paragraphs:
+            if para.text.strip():
+                return para.text.strip()
+    except Exception as e:
+        print(f"讀取 {filepath} 發生錯誤：{e}")
+    return None
+
+def rename_files_by_title(folder):
+    for filename in os.listdir(folder):
+        if filename.endswith(".docx"):
+            old_path = os.path.join(folder, filename)
+            title = get_title_from_docx(old_path)
+            if title:
+                # 避免檔名中有非法字元
+                safe_title = "".join(c for c in title if c not in r'\/:*?"<>|')
+                new_name = safe_title + ".docx"
+                new_path = os.path.join(folder, new_name)
+
+                # 若檔名重複，添加數字避免衝突
+                count = 1
+                while os.path.exists(new_path):
+                    new_path = os.path.join(folder, f"{safe_title}_{count}.docx")
+                    count += 1
+
+                os.rename(old_path, new_path)
+                print(f"✅ 已將 {filename} → {os.path.basename(new_path)}")
+            else:
+                print(f"⚠️ {filename} 沒有找到標題，略過。")
+
+if __name__ == "__main__":
+    rename_files_by_title(folder_path)
