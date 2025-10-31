@@ -4,3 +4,4 @@
 
 核心對話指令1：
 幫我寫一個python程序，用於提取word的標題，而後將文件名改為標題。
+<img width="1032" height="719" alt="螢幕擷取畫面 2025-11-01 014036" src="https://github.com/user-attachments/assets/52f7e8f8-5541-4881-bbf6-1ecac2b76f59" />
