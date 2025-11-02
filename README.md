@@ -16,6 +16,7 @@
 <img width="898" height="757" alt="image" src="https://github.com/user-attachments/assets/bbacb4e7-d5a2-4328-9cc2-d9c16c7d874a" />
 <img width="1451" height="447" alt="image" src="https://github.com/user-attachments/assets/9c95f959-788d-4f5b-95d8-d86d282f02d3" />
 
+核心對話指令2：
 
 
 
