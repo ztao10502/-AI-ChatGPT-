@@ -31,8 +31,10 @@
 安裝相關套件來使用程式
 <img width="707" height="255" alt="gpt7" src="https://github.com/user-attachments/assets/6a81b2fb-2ce3-44d7-9703-d4077da04246" />
 <img width="668" height="323" alt="gpt8" src="https://github.com/user-attachments/assets/e6554cd9-be51-438f-8f0a-4ae264f3cf00" />
+
 注意相關提醒
 程式出錯可能是沒注意提醒，如果仍然有問題可以去向GPT詢問如何解決
+
 <img width="626" height="56" alt="gpt9" src="https://github.com/user-attachments/assets/8a7a5777-1d95-4b88-beba-f544d1cb8871" />
 
 
