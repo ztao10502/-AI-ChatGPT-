@@ -18,6 +18,7 @@
 
 
 核心對話指令2：
+
 如果文檔是pdf，能否給我一個完整的代碼，技能修改word文件名，同時也能根據文檔的第一行內容，修改pdf的文件名。
 <img width="760" height="219" alt="gpt1" src="https://github.com/user-attachments/assets/00bbbb8a-4d28-4c0e-9ee1-f582a3058717" />
 <img width="725" height="474" alt="gpt2" src="https://github.com/user-attachments/assets/1d427e53-6880-40a7-90b9-89bd631c6f6f" />
@@ -44,5 +45,7 @@
 
 
 結語：
+
 1.對於不會的東西真的要盡情發問，即使覺得他很蠢，因為不發問你永遠不清楚你的問體癥結點在哪裡
+
 2.如果程式的執行出現問題可以反覆向GPT詢問，也可以注意GPT給的小提醒，這可能影響到程式的運行，然後從GPT給的回答中補足自己不全的知識
