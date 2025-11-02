@@ -3,7 +3,9 @@
 我們用ChatGPT製作Python程序，來幫忙處理批量的word文件，且幫忙刪除重複多次的檔案內容。
 
 核心對話指令1：
+
 幫我寫一個python程序，用於提取word的標題，而後將文件名改為標題。
+
 <img width="1032" height="719" alt="螢幕擷取畫面 2025-11-01 014036" src="https://github.com/user-attachments/assets/52f7e8f8-5541-4881-bbf6-1ecac2b76f59" />
 <img width="895" height="750" alt="image" src="https://github.com/user-attachments/assets/a1386701-b6e1-4e0e-97e7-f1fcf632f63d" />
 <img width="890" height="689" alt="image" src="https://github.com/user-attachments/assets/6dd02cf9-1439-4732-a938-a350af4f97d6" />
@@ -11,6 +13,7 @@
 
 根據GPT的指示進行安裝
 如有不懂的疑惑會更進一步的詢問
+
 <img width="899" height="628" alt="image" src="https://github.com/user-attachments/assets/1e7a2e4f-d098-45e8-8766-41c3b0ad4cf4" />
 <img width="909" height="765" alt="image" src="https://github.com/user-attachments/assets/927909fd-f1cd-42dc-a944-cc4a22072e89" />
 <img width="898" height="757" alt="image" src="https://github.com/user-attachments/assets/bbacb4e7-d5a2-4328-9cc2-d9c16c7d874a" />
@@ -20,6 +23,7 @@
 核心對話指令2：
 
 如果文檔是pdf，能否給我一個完整的代碼，技能修改word文件名，同時也能根據文檔的第一行內容，修改pdf的文件名。
+
 <img width="760" height="219" alt="gpt1" src="https://github.com/user-attachments/assets/00bbbb8a-4d28-4c0e-9ee1-f582a3058717" />
 <img width="725" height="474" alt="gpt2" src="https://github.com/user-attachments/assets/1d427e53-6880-40a7-90b9-89bd631c6f6f" />
 <img width="739" height="471" alt="gpt3" src="https://github.com/user-attachments/assets/b6774221-2285-4258-b7b8-988b09b27e07" />
@@ -30,6 +34,7 @@
 
 根據GPT的指示操作
 安裝相關套件來使用程式
+
 <img width="707" height="255" alt="gpt7" src="https://github.com/user-attachments/assets/6a81b2fb-2ce3-44d7-9703-d4077da04246" />
 <img width="668" height="323" alt="gpt8" src="https://github.com/user-attachments/assets/e6554cd9-be51-438f-8f0a-4ae264f3cf00" />
 
