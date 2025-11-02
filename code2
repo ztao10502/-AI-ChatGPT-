@@ -1,1 +1,93 @@
+import os
+from docx import Document
+from PyPDF2 import PdfReader
+
+def get_first_line_from_docx(filepath):
+    """取得 Word 第一行文字"""
+    try:
+        doc = Document(filepath)
+        for para in doc.paragraphs:
+            text = para.text.strip()
+            if text:
+                return text
+    except Exception as e:
+        print(f"❌ 讀取 Word 時出錯：{filepath} -> {e}")
+    return None
+
+
+def get_first_line_from_pdf(filepath):
+    """取得 PDF 第一行文字"""
+    try:
+        reader = PdfReader(filepath)
+        first_page = reader.pages[0]
+        text = first_page.extract_text()
+        if text:
+            for line in text.splitlines():
+                line = line.strip()
+                if line:
+                    return line
+    except Exception as e:
+        print(f"❌ 讀取 PDF 時出錯：{filepath} -> {e}")
+    return None
+
+
+def sanitize_filename(name):
+    """移除 Windows 不允許的檔名字元"""
+    invalid_chars = r'\/:*?"<>|'
+    for ch in invalid_chars:
+        name = name.replace(ch, "_")
+    return name.strip()
+
+
+def rename_file(filepath):
+    """根據文件內容重新命名 Word 或 PDF"""
+    folder, old_name = os.path.split(filepath)
+    basename, ext = os.path.splitext(old_name)
+    ext = ext.lower()
+
+    if ext == ".docx":
+        first_line = get_first_line_from_docx(filepath)
+    elif ext == ".pdf":
+        first_line = get_first_line_from_pdf(filepath)
+    else:
+        print(f"⚠️ 跳過非 docx/pdf 文件: {old_name}")
+        return
+
+    if not first_line:
+        print(f"⚠️ 無法從 {old_name} 取得第一行文字，跳過。")
+        return
+
+    new_name = sanitize_filename(first_line) + ext
+    new_path = os.path.join(folder, new_name)
+
+    # 若同名檔已存在，避免覆蓋
+    counter = 1
+    while os.path.exists(new_path):
+        new_path = os.path.join(folder, f"{sanitize_filename(first_line)}_{counter}{ext}")
+        counter += 1
+
+    try:
+        os.rename(filepath, new_path)
+        print(f"✅ 已重命名：{old_name} → {os.path.basename(new_path)}")
+    except Exception as e:
+        print(f"❌ 無法重命名 {old_name}：{e}")
+
+
+def batch_rename(folder_path):
+    """批次處理整個資料夾"""
+    for filename in os.listdir(folder_path):
+        filepath = os.path.join(folder_path, filename)
+        if os.path.isfile(filepath):
+            rename_file(filepath)
+
+
+if __name__ == "__main__":
+    # 🟢 修改這裡：輸入要處理的資料夾路徑
+    folder = r"D:\Documents\待重命名"
+
+    if not os.path.exists(folder):
+        print("❌ 資料夾不存在，請確認路徑。")
+    else:
+        batch_rename(folder)
+        print("\n🎉 全部文件處理完成！")
 
